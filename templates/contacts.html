@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 	<!-- Кодировка веб-страницы -->
-	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<!-- Настройка viewport -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Контакты</title>
@@ -23,41 +23,48 @@
 <body>
 	<div class="container-fluid">
 		<div class="row flex-nowrap">					
-			<div class="col-auto bg-dark container-fluid" style="width: 18%" >
+			<div class="col-auto bg-dark " style="width: 18%" >
 			<!--div class="col-auto col-md-3 col-xl-3 px-sm-2 px-0 bg-dark container-fluid"-->
 				<div class="d-flex flex-column align-items-center align-items-sm-start px-0 pt-2 text-white min-vh-100 menu-base">
-					<a href="/" class="d-flex align-items-center pb-2 mb-md-0 me-md-auto text-white text-decoration-none">
-						<img src="https://github.com/AlexAverin1982/SimpleWebServer/blob/feature/base_webserver/templates/i.jpg" class="mb-0 me-2">
+					<div class="d-flex align-items-center pb-2 mb-md-0 me-md-auto text-white text-decoration-none">
+						<!--img src="./templates/bootstrap-logo.svg" class="mb-0 me-2" alt=" " width="30" height="30"-->
 						<!--img src="/templates/bootstrap-logo.svg" class="mb-0 me-2"-->
 						<span class="fs-5 d-none d-sm-inline">Меню</span>
-					</a>
-					 <hr color="red" width="300">
+					</div>
+					<hr color="red" width="300">
 					<ul class="nav nav-pills mb-sm-auto align-items-center" id="menu">
 					<!--ul class="nav nav-pills flex-column mb-sm-auto align-items-center" id="menu"-->
 					<!--ul class="d-flex nav nav-pills nav-justified flex-column mb-sm-auto mx-0 align-items-center align-items-sm-start" id="menu"-->
-						<li class="nav-item" >
-							<a href="#" class="nav-link ps-0 mx-0 active" data-bs-toggle="pill">
+						<li class="nav-item">
+							<a href="main">
+							<div class="nav-link ps-0 mx-0 active" data-bs-toggle="pill">
 								<i class="fs-4 bi-house ps-3"></i> 
 								<span class="ms-2 d-none d-sm-inline text-white">Главная</span>
+							</div>
+							</a>
+						</li>		
+						<li class="nav-item px-auto">
+							<a href="categories">
+								<div class="nav-link ps-0 mx-0" data-bs-toggle="pill">
+									<i class="fs-4 bi-speedometer2 ps-3"></i>
+									<span class="ms-2 d-none d-sm-inline text-white">Категории</span>
+								</div>
 							</a>
 						</li>
-						
-						<li class="nav-item px-auto" >
-							<a href="#" class="nav-link ps-0 mx-0" data-bs-toggle="pill">
-								<i class="fs-4 bi-speedometer2 ps-3"></i>
-								<span class="ms-2 d-none d-sm-inline text-white">Категории</span>
+						<li class="nav-item">
+							<a href="orders">
+								<div class="nav-link px-0 align-middle" data-bs-toggle="pill">
+									<i class="fs-4 bi-table ps-3"></i>
+									<span class="ms-2 d-none d-sm-inline text-white">Заказы</span>
+								</div>
 							</a>
 						</li>
-						<li class="nav-item" >
-							<a href="#" class="nav-link px-0 align-middle" data-bs-toggle="pill">
-								<i class="fs-4 bi-table ps-3"></i>
-								<span class="ms-2 d-none d-sm-inline text-white">Заказы</span>
-							</a>
-						</li>
-						<li class="nav-item" >
-							<a href="#" class="nav-link px-0 align-middle" data-bs-toggle="pill">
-								<i class="fs-4 bi-bootstrap ps-3"></i>
-								<span class="ms-2 d-none d-sm-inline text-white">Контакты</span>
+						<li class="nav-item">
+							<a href="contacts">
+								<div class="nav-link px-0 align-middle" data-bs-toggle="pill">
+									<i class="fs-4 bi-bootstrap ps-3"></i>
+									<span class="ms-2 d-none d-sm-inline text-white">Контакты</span>
+								</div>
 							</a>
 						</li>
 					</ul>
@@ -68,8 +75,8 @@
 						<span class="d-none d-sm-inline mx-2">Пользователь</span>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-						<li><a class="dropdown-item" href="#" text-white>Профиль</a></li>
-						<li><a class="dropdown-item" href="#" text-white>Выход</a></li>
+						<li><a class="dropdown-item" href="#">Профиль</a></li>
+						<li><a class="dropdown-item" href="#">Выход</a></li>
 					</ul>
 				</div>
 				</div>
@@ -82,22 +89,27 @@
 					<div class="container">
 						<div class="row d-flex justify-content-center my-5">		<!-- flex-row -->
 							<div class="card col col-md-4 px-4 p-3 ms-4">
+							<form class="post-form" action="#" method="post">
 								<div class="mb-3 text-start">
-								  <label for="exampleFormControlInput1" class="form-label">Имя</label>
-								  <input class="form-control" id="exampleFormControlInput1">
+								  <label for="UserNameControlInput" class="form-label">Имя</label>
+								  <input class="form-control" id="UserNameControlInput" name="send_from">
 								</div>
-								<label class="form-label text-start">Почта</label>
-								<div class="input-group mb-3 text-start">
-								  <button class="btn btn-custom-color" type="button" id="inputGroupFileAddon03">@</button>
-								  <input class="form-control" type="mail" id="formMail">
-								</div>								
+								<div class="mb-3 text-start">
+									<label class="form-label text-start">Почта</label>
+									<div class="input-group mb-3 text-start">
+										<button class="btn btn-custom-color" type="button" id="inputGroupFileAddon03">@</button>
+										<input class="form-control" id="formMail" name="email">
+									</div>								
+								</div>
 								<div class="mb-3 text-start">
 								  <label for="exampleFormControlTextarea1" class="form-label">Сообщение</label>
-								  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+								  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="message"></textarea>
 								</div>	
 								<div class="text-start">
-									<a href="#" class="btn btn-primary col-6" >Отправить</a>
+									<!--a href="send_message" class="btn btn-primary col-6" type="submit" >Отправить</a-->
+									<button type="submit" class="btn btn-primary">Отправить</button>
 								</div>	
+							</form>
 							</div>
 							<div class="col col-md-5 px-5 mx-auto">
 								<div class="text-start">

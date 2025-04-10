@@ -1,6 +1,4 @@
-import os
 from http.server import HTTPServer
-
 from src.web_server import MyServer
 
 
